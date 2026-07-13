@@ -6,16 +6,15 @@
              x:Class="Sample.MainPage"
              Title="LoadMoreView">
 
-   <ContentPage.BindingContext>
-        <local:CarouselViewModel/>
-    </ContentPage.BindingContext>
-
     <ContentPage.Content>
         <carousel:SfCarousel x:Name="carousel"
                              ItemsSource="{Binding ImageCollection}"
                              AllowLoadMore="True"
                              LoadMoreItemsCount="2" 
                              ViewMode="Linear">
+                <carousel:SfCarousel.BindingContext>
+                    <local:CarouselViewModel/>
+                </carousel:SfCarousel.BindingContext>
                 <carousel:SfCarousel.ItemTemplate>
                     <DataTemplate>
                             <Image Source="{Binding Image}" 
